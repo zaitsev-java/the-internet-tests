@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="AllTests" verbose="1">
+
+    <test name="wrongCredentialsTests">
+        <parameter name ="browser" value = "firefox" />
+        <parameter name ="username" value = "wrongUsername" />
+        <parameter name ="password" value = "wrongPassword" />
+        <parameter name ="message" value = "Your username is invalid!" />
+        <classes>
+            <class name="com.herokuapp.theinternet.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="wrongUsernameTests">
+        <parameter name ="username" value = "wrongUsername" />
+        <parameter name ="password" value = "SuperSecretPassword!" />
+        <parameter name ="message" value = "Your username is invalid!" />
+        <classes>
+            <class name="com.herokuapp.theinternet.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="wrongPasswordTests">
+        <parameter name ="username" value = "tomsmith" />
+        <parameter name ="password" value = "wrongPassword" />
+        <parameter name ="message" value = "Your password is invalid!" />
+        <classes>
+            <class name="com.herokuapp.theinternet.LoginTests"/>
+        </classes>
+    </test>
+
+
+    <test name="validCredentialsTests">
+        <parameter name ="username" value = "tomsmith" />
+        <parameter name ="password" value = "SuperSecretPassword!" />
+        <parameter name ="message" value = "You logged into a secure area!" />
+        <classes>
+            <class name="com.herokuapp.theinternet.LoginTests"/>
+        </classes>
+    </test>
+
+
+</suite>
