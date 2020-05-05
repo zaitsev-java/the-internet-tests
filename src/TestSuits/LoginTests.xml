@@ -6,39 +6,30 @@
         <parameter name ="browser" value = "firefox" />
         <parameter name ="username" value = "wrongUsername" />
         <parameter name ="password" value = "wrongPassword" />
-        <parameter name ="message" value = "Your username is invalid!" />
+        <parameter name ="expectedMessage" value = "Your username is invalid!" />
         <classes>
-            <class name="com.herokuapp.theinternet.LoginTests"/>
+            <class name="com.herokuapp.theinternet.NegativeLoginTests"/>
         </classes>
     </test>
 
     <test name="wrongUsernameTests">
         <parameter name ="username" value = "wrongUsername" />
         <parameter name ="password" value = "SuperSecretPassword!" />
-        <parameter name ="message" value = "Your username is invalid!" />
+        <parameter name ="expectedMessage" value = "Your username is invalid!" />
         <classes>
-            <class name="com.herokuapp.theinternet.LoginTests"/>
+            <class name="com.herokuapp.theinternet.NegativeLoginTests"/>
         </classes>
     </test>
 
     <test name="wrongPasswordTests">
         <parameter name ="username" value = "tomsmith" />
         <parameter name ="password" value = "wrongPassword" />
-        <parameter name ="message" value = "Your password is invalid!" />
+        <parameter name ="expectedMessage" value = "Your password is invalid!" />
         <classes>
-            <class name="com.herokuapp.theinternet.LoginTests"/>
+            <class name="com.herokuapp.theinternet.NegativeLoginTests"/>
         </classes>
     </test>
 
-
-    <test name="validCredentialsTests">
-        <parameter name ="username" value = "tomsmith" />
-        <parameter name ="password" value = "SuperSecretPassword!" />
-        <parameter name ="message" value = "You logged into a secure area!" />
-        <classes>
-            <class name="com.herokuapp.theinternet.LoginTests"/>
-        </classes>
-    </test>
 
 
 </suite>

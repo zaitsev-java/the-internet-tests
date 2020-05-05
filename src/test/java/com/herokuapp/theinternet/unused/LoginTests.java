@@ -1,5 +1,6 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.unused;
 
+import com.herokuapp.theinternet.TestUtilities;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;

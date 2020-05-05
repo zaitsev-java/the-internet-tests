@@ -14,6 +14,7 @@ public class LoginPage extends BasePage {
     private final By usernameField = By.xpath("//input[@id='username']");
     private final By passwordField = By.xpath("//input[@id='password']");
     private final By loginButton = By.xpath("//i[contains(text(),'Login')]");
+    private final By errorMessage = By.xpath("//div[@id='flash']");
 
 
     public LoginPage(WebDriver driver, Logger log) {
@@ -27,6 +28,22 @@ public class LoginPage extends BasePage {
         click(loginButton);
         return new SecureAreaPage(driver, log);
     }
+
+    public void logInNegative(String username, String password) {
+        log.info("[Negative]Logging in with username [" + username + "] and password [" + password + "]");
+        type(username, usernameField);
+        type(password, passwordField);
+        click(loginButton);
+    }
+
+    public void waitForErrorMessage() {
+        waitForVisibilityOf(errorMessage, 5);
+    }
+
+    public String getErrorMessageText() {
+        return find(errorMessage).getText();
+    }
+
 
 
 }

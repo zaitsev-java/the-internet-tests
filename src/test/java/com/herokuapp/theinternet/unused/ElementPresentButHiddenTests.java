@@ -1,5 +1,6 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.unused;
 
+import com.herokuapp.theinternet.TestUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.TimeoutException;
@@ -51,7 +52,7 @@ public class ElementPresentButHiddenTests extends TestUtilities {
             wait.until(ExpectedConditions.visibilityOf(hiddenTextElement));
         } catch (TimeoutException e) {
             System.out.println("Exception cached : " + e.getMessage());
-            sleep(3000);
+           // sleep(3000);
         }
 
         String hiddenTextVar = driver.findElement(hiddenText).getText();
