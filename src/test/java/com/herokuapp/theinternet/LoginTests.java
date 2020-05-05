@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase {
+public class LoginTests extends TestUtilities {
 
     String loginPageUrl = "https://the-internet.herokuapp.com/login";
     private final By loginMessage = By.xpath("//div[@id='flash']");

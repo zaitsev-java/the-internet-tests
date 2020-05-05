@@ -3,10 +3,7 @@ package com.herokuapp.theinternet;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +12,7 @@ public class TestBase {
     WebDriver driver;
 
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeMethod
     public void setUp(@Optional("chrome") String browser) {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
@@ -36,7 +33,7 @@ public class TestBase {
 
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ElementPresentsDelayTests extends TestBase {
+public class ElementPresentsDelayTests extends TestUtilities {
 
 
     String hiddenElementTwoPage = "https://the-internet.herokuapp.com/dynamic_loading/2";

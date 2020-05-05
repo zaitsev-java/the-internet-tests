@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ElementPresentButHiddenTests extends TestBase {
+public class ElementPresentButHiddenTests extends TestUtilities {
 
     String hiddenElementOnePage = "https://the-internet.herokuapp.com/dynamic_loading/1";
     private final By startButton = By.xpath("//button[contains(text(),'Start')]");

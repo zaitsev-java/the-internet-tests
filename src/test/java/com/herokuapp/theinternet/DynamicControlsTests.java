@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DynamicControlsTests extends TestBase {
+public class DynamicControlsTests extends TestUtilities {
 
     String dynamicControlsPage = "https://the-internet.herokuapp.com/dynamic_controls";
     private final By checkboxFirst = By.xpath("//div[@id='checkbox']//input");
