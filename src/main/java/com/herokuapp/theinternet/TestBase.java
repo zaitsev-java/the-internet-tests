@@ -1,32 +1,22 @@
 package com.herokuapp.theinternet;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     @Parameters({"browser"})
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser) {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
-        switch (browser) {
-            case "firefox":
-                driver = new FirefoxDriver();
-                break;
-            case "chrome":
-                driver = new ChromeDriver();
-                break;
-            default:
-                System.out.println("Starting Chrome as Default");
-                driver = new ChromeDriver();
-        }
+        BrowserDriverFactory factory = new BrowserDriverFactory(browser);
+        driver = factory.createDriver();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
