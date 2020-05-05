@@ -11,7 +11,7 @@ public class LoginTests extends TestBase {
     private final By loginMessage = By.xpath("//div[@id='flash']");
     private final By loginField = By.xpath("//input[@id='username']");
     private final By passwordField = By.xpath("//input[@id='password']");
-    private final By loginButton = By.xpath("//i[@class='fa fa-2x fa-sign-in']");
+    private final By loginButton = By.xpath("//i[contains(text(),'Login')]");
 
 
     @Parameters({"username", "password", "message"})
