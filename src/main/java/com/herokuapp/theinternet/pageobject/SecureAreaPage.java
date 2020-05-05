@@ -9,7 +9,7 @@ public class SecureAreaPage extends BasePage {
     private String pageUrl = "https://the-internet.herokuapp.com/secure";
 
     private By logOutButton = By.xpath("//i[contains(text(),'Logout')]");
-    private By message = By.xpath("//h2[contains(text(),'Secure Area')]");
+    private By message = By.xpath("//div[contains(text(),'You logged into a secure area!')]");
 
 
     public SecureAreaPage(WebDriver driver, Logger log) {
