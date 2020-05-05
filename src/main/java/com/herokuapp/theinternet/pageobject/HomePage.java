@@ -1,31 +1,31 @@
 package com.herokuapp.theinternet.pageobject;
 
-import com.herokuapp.theinternet.TestUtilities;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends Page{
+public class HomePage extends BasePage {
+
+
+    private String pageUrl = "https://the-internet.herokuapp.com";
+
+    private By loginPageLink = By.xpath("//a[contains(text(),'Form Authentication')]");
+
+
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
-
-    private String pageUrl = "https://the-internet.herokuapp.com";
-
-    private By loginPageUrl = By.linkText("https://the-internet.herokuapp.com/login");
-
-
-    public void openPage() {
+    public void open() {
         log.info("Opening page: " + pageUrl);
-        driver.get(pageUrl);
+        openUrl(pageUrl);
         log.info("Page opened.");
     }
 
-    public LoginPage clickFormAuthenticationLink() {
+    public LoginPage clickOnLoginLink() {
         log.info("Clicking on Form Authentication link on HomePage");
-        driver.findElement(loginPageUrl).click();
+        click(loginPageLink);
         return new LoginPage(driver, log);
     }
 
