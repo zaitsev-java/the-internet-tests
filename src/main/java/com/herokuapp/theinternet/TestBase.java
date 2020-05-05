@@ -30,21 +30,11 @@ public class TestBase {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-
     }
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
-    }
-
-    //  For Maintenance
-    void sleep(long milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 }
