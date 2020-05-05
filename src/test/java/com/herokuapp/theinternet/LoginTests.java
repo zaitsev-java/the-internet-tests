@@ -17,7 +17,9 @@ public class LoginTests extends TestUtilities {
     @Parameters({"username", "password", "message"})
     @Test(groups = {"negative"}, priority = 1)
     public void wrongLoginTest(String username, String password, String message) {
+        log.info("Login test is starting");
         driver.get(loginPageUrl);
+        log.info("Login page is opened");
         driver.findElement(loginField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
