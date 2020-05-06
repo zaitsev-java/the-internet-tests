@@ -24,13 +24,13 @@ public class HomePage extends BasePage {
         log.info("Page opened.");
     }
 
-    public LoginPage clickOnLoginLink() {
+    public LoginPage clickLoginLink() {
         log.info("Clicking on Form Authentication link on HomePage");
         click(loginPageLink);
         return new LoginPage(driver, log);
     }
 
-    public CheckboxesPage clickOnCheckboxesLink() {
+    public CheckboxesPage clickCheckboxesLink() {
         log.info("Clicking on Form Authentication link on HomePage");
         click(checkboxesLink);
         return new CheckboxesPage(driver, log);

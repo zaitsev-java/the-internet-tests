@@ -14,7 +14,7 @@ public class NegativeLoginTests extends TestUtilities {
         log.info("Starting testLoginNegative test");
         HomePage homePage = new HomePage(driver, log);
         homePage.open();
-        LoginPage loginPage = homePage.clickOnLoginLink();
+        LoginPage loginPage = homePage.clickLoginLink();
         loginPage.logInNegative(username, password);
         loginPage.waitForErrorMessage();
         String message = loginPage.getErrorMessageText();
