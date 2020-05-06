@@ -10,6 +10,7 @@ public class HomePage extends BasePage {
     private String pageUrl = "https://the-internet.herokuapp.com";
 
     private By loginPageLink = By.xpath("//a[contains(text(),'Form Authentication')]");
+    private By checkboxesLink = By.xpath("//a[contains(text(),'Checkboxes')]");
 
 
 
@@ -27,6 +28,12 @@ public class HomePage extends BasePage {
         log.info("Clicking on Form Authentication link on HomePage");
         click(loginPageLink);
         return new LoginPage(driver, log);
+    }
+
+    public CheckboxesPage clickOnCheckboxesLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(checkboxesLink);
+        return new CheckboxesPage(driver, log);
     }
 
 
