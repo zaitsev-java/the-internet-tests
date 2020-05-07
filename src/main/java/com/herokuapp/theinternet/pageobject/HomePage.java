@@ -11,12 +11,12 @@ public class HomePage extends BasePage {
 
     private By loginPageLink = By.xpath("//a[contains(text(),'Form Authentication')]");
     private By checkboxesLink = By.xpath("//a[contains(text(),'Checkboxes')]");
-
-
+    private By dropdownLink = By.xpath("//a[contains(text(),'Dropdown')]");
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
+
 
     public void open() {
         log.info("Opening page: " + pageUrl);
@@ -34,6 +34,12 @@ public class HomePage extends BasePage {
         log.info("Clicking on Form Authentication link on HomePage");
         click(checkboxesLink);
         return new CheckboxesPage(driver, log);
+    }
+
+    public DropdownPage clickDropdownLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(dropdownLink);
+        return new DropdownPage(driver, log);
     }
 
 
