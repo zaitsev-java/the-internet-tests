@@ -1,8 +1,8 @@
 package com.herokuapp.theinternet;
 
-import com.herokuapp.theinternet.pageobject.HomePage;
-import com.herokuapp.theinternet.pageobject.LoginPage;
-import com.herokuapp.theinternet.pageobject.SecureAreaPage;
+import com.herokuapp.theinternet.pages.HomePage;
+import com.herokuapp.theinternet.pages.LoginPage;
+import com.herokuapp.theinternet.pages.SecureAreaPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

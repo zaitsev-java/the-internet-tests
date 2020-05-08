@@ -1,8 +1,8 @@
 package com.herokuapp.theinternet;
 
-import com.herokuapp.theinternet.pageobject.HomePage;
-import com.herokuapp.theinternet.pageobject.NewWindowPage;
-import com.herokuapp.theinternet.pageobject.WindowsPage;
+import com.herokuapp.theinternet.pages.HomePage;
+import com.herokuapp.theinternet.pages.NewWindowPage;
+import com.herokuapp.theinternet.pages.WindowsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

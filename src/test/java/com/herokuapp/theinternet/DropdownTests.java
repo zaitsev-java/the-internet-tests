@@ -1,7 +1,7 @@
 package com.herokuapp.theinternet;
 
-import com.herokuapp.theinternet.pageobject.DropdownPage;
-import com.herokuapp.theinternet.pageobject.HomePage;
+import com.herokuapp.theinternet.pages.DropdownPage;
+import com.herokuapp.theinternet.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

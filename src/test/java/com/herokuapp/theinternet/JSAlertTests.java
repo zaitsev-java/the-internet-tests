@@ -1,7 +1,7 @@
 package com.herokuapp.theinternet;
 
-import com.herokuapp.theinternet.pageobject.HomePage;
-import com.herokuapp.theinternet.pageobject.JSAlertsPage;
+import com.herokuapp.theinternet.pages.HomePage;
+import com.herokuapp.theinternet.pages.JSAlertsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

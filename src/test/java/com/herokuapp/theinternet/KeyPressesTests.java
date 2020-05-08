@@ -1,7 +1,7 @@
 package com.herokuapp.theinternet;
 
-import com.herokuapp.theinternet.pageobject.HomePage;
-import com.herokuapp.theinternet.pageobject.KeyPressesPage;
+import com.herokuapp.theinternet.pages.HomePage;
+import com.herokuapp.theinternet.pages.KeyPressesPage;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
