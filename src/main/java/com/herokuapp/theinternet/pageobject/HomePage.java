@@ -14,6 +14,7 @@ public class HomePage extends BasePage {
     private final By dropdownLink = By.xpath("//a[contains(text(),'Dropdown')]");
     private final By jSAlertLink = By.xpath("//a[contains(text(),'JavaScript Alerts')]");
     private final By multipleWindowsLink = By.xpath("//a[contains(text(),'Multiple Windows')]");
+    private final By wYSIWYGEditorLink = By.xpath("//a[contains(text(),'WYSIWYG Editor')]");
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -54,6 +55,12 @@ public class HomePage extends BasePage {
         log.info("Clicking on Form Authentication link on HomePage");
         click(multipleWindowsLink);
         return new WindowsPage(driver, log);
+    }
+
+    public WYSIWYGEditorPage clickWYSIWYGEditorLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(wYSIWYGEditorLink);
+        return new WYSIWYGEditorPage(driver, log);
     }
 
 

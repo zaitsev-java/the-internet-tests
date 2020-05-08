@@ -90,6 +90,10 @@ public class BasePage extends Page{
         }
     }
 
+    protected void switchToFrame(By framelocator) {
+        driver.switchTo().frame(find(framelocator));
+    }
+
 
 
 
