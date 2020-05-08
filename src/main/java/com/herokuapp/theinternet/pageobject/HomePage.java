@@ -43,6 +43,12 @@ public class HomePage extends BasePage {
         return new DropdownPage(driver, log);
     }
 
+    public JSAlertsPage clickJSAlertLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(jSAlertLink);
+        return new JSAlertsPage(driver, log);
+    }
+
 
 
 
