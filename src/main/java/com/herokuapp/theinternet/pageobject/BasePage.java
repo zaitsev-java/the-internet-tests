@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class BasePage extends Page{
+public class BasePage extends Page {
     public BasePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
@@ -44,14 +44,14 @@ public class BasePage extends Page{
         wait.until(conditions);
     }
 
-    protected void waitForVisibilityOf(By locator, Integer ... timeOutInSeconds) {
+    protected void waitForVisibilityOf(By locator, Integer... timeOutInSeconds) {
         int attemps = 0;
         while (attemps < 2) {
             try {
                 waitFor(ExpectedConditions.visibilityOfElementLocated(locator),
                         timeOutInSeconds.length > 0 ? timeOutInSeconds[0] : null);
                 break;
-            }   catch (StaleElementReferenceException e) {
+            } catch (StaleElementReferenceException e) {
                 attemps++;
             }
         }
@@ -94,7 +94,9 @@ public class BasePage extends Page{
         driver.switchTo().frame(find(framelocator));
     }
 
-
+    protected void pressKeyOnElement(By locator, Keys key) {
+        find(locator).sendKeys(key);
+    }
 
 
 }
