@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -78,11 +77,9 @@ public class BasePage extends Page {
     public void switchToWindowWithTitle(String expectedTitle) {
         String firstWindow = driver.getWindowHandle();
         Set<String> allWindows = driver.getWindowHandles();
-        Iterator<String> windowsIterator = allWindows.iterator();
-        while (windowsIterator.hasNext()) {
-            String windowHandle = windowsIterator.next().toString();
-            if (!windowHandle.equals(firstWindow)) {
-                driver.switchTo().window(windowHandle);
+        for (String allWindow : allWindows) {
+            if (!allWindow.equals(firstWindow)) {
+                driver.switchTo().window(allWindow);
                 if (getCurrentPageTitle().equals(expectedTitle)) {
                     break;
                 }
@@ -90,12 +87,18 @@ public class BasePage extends Page {
         }
     }
 
-    protected void switchToFrame(By framelocator) {
-        driver.switchTo().frame(find(framelocator));
+    protected void switchToFrame(By frameLocator) {
+        driver.switchTo().frame(find(frameLocator));
     }
 
     protected void pressKeyOnElement(By locator, Keys key) {
         find(locator).sendKeys(key);
+    }
+
+    public void scrollToBottom() {
+        log.info("Scrolling to the bottom of the page");
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
 

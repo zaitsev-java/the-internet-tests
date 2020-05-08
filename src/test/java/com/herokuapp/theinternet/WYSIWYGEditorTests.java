@@ -12,6 +12,7 @@ public class WYSIWYGEditorTests extends TestUtilities {
     public void testEditorsDefaultValues() {
         HomePage homePage = new HomePage(driver, log);
         homePage.open();
+        homePage.scrollToBottom();
         WYSIWYGEditorPage wYSIWYGEditorPage = homePage.clickWYSIWYGEditorLink();
         String editorsText = wYSIWYGEditorPage.getEditorText();
         Assert.assertTrue(editorsText.equals("Your content goes here."));
