@@ -11,15 +11,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class BasePage {
-
-    protected WebDriver driver;
-    protected Logger log;
-
+public class BasePage extends Page{
     public BasePage(WebDriver driver, Logger log) {
-        this.driver = driver;
-        this.log = log;
+        super(driver, log);
     }
+
+//    protected WebDriver driver;
+//    protected Logger log;
+
+//    public BasePage(WebDriver driver, Logger log) {
+//        this.driver = driver;
+//        this.log = log;
+//    }
 
     protected void openUrl(String url) {
         driver.get(url);
