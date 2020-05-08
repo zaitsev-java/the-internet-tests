@@ -9,10 +9,11 @@ public class HomePage extends BasePage {
 
     private String pageUrl = "https://the-internet.herokuapp.com";
 
-    private By loginPageLink = By.xpath("//a[contains(text(),'Form Authentication')]");
-    private By checkboxesLink = By.xpath("//a[contains(text(),'Checkboxes')]");
-    private By dropdownLink = By.xpath("//a[contains(text(),'Dropdown')]");
-    private By jSAlertLink = By.xpath("//a[contains(text(),'JavaScript Alerts')]");
+    private final By loginPageLink = By.xpath("//a[contains(text(),'Form Authentication')]");
+    private final By checkboxesLink = By.xpath("//a[contains(text(),'Checkboxes')]");
+    private final By dropdownLink = By.xpath("//a[contains(text(),'Dropdown')]");
+    private final By jSAlertLink = By.xpath("//a[contains(text(),'JavaScript Alerts')]");
+    private final By multipleWindowsLink = By.xpath("//a[contains(text(),'Multiple Windows')]");
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -47,6 +48,12 @@ public class HomePage extends BasePage {
         log.info("Clicking on Form Authentication link on HomePage");
         click(jSAlertLink);
         return new JSAlertsPage(driver, log);
+    }
+
+    public WindowsPage clickMultipleWindowsLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(multipleWindowsLink);
+        return new WindowsPage(driver, log);
     }
 
 

@@ -1,6 +1,5 @@
 package com.herokuapp.theinternet;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.herokuapp.theinternet.pageobject.HomePage;
 import com.herokuapp.theinternet.pageobject.JSAlertsPage;
 import org.testng.Assert;
