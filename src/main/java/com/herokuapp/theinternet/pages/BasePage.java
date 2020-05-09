@@ -132,6 +132,11 @@ public class BasePage extends Page {
                + "simulateHTML5DragAndDrop(source,destination);", find(from), find(to));
     }
 
+    protected void hoverOverElement(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+    }
+
 
 
 
