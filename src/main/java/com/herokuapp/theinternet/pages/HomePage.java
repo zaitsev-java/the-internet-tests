@@ -17,6 +17,7 @@ public class HomePage extends BasePage {
     private final By wYSIWYGEditorLink = By.xpath("//a[contains(text(),'WYSIWYG Editor')]");
     private final By keyPressesLink = By.xpath("//a[contains(text(),'Key Presses')]");
     private final By fileUploadLink = By.xpath("//a[contains(text(),'File Upload')]");
+    private final By dragAndDropLink = By.xpath("//a[contains(text(),'Drag and Drop')]");
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -75,6 +76,12 @@ public class HomePage extends BasePage {
         log.info("Clicking on Form Authentication link on HomePage");
         click(fileUploadLink);
         return new FileUploaderPage(driver, log);
+    }
+
+    public DragAndDropPage clickDragAndDropLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(dragAndDropLink);
+        return new DragAndDropPage(driver, log);
     }
 
 

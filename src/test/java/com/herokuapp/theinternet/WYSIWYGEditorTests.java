@@ -15,6 +15,6 @@ public class WYSIWYGEditorTests extends TestUtilities {
         homePage.scrollToBottom();
         WYSIWYGEditorPage wYSIWYGEditorPage = homePage.clickWYSIWYGEditorLink();
         String editorsText = wYSIWYGEditorPage.getEditorText();
-        Assert.assertTrue(editorsText.equals("Your content goes here."));
+        Assert.assertEquals(editorsText, "Your content goes here.");
     }
 }
