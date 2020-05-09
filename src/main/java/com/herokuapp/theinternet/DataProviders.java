@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class CSVDataProviders {
+public class DataProviders {
 
     @DataProvider(name = "csvReader")
     public static Iterator<Object[]> csvReader(Method method) {
@@ -44,6 +44,15 @@ public class CSVDataProviders {
         }
 
         return list.iterator();
+    }
+
+    @DataProvider(name = "files")
+    protected static Object[][] files() {
+        return new Object[][]{
+                {1, "index.html"},
+                {2, "java.jpg"},
+                {3, "text.txt"}
+        };
     }
 
 }

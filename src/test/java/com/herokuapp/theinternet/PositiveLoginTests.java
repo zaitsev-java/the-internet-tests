@@ -14,6 +14,7 @@ public class PositiveLoginTests extends TestUtilities {
         log.info("Starting Login Test");
         HomePage homePage = new HomePage(driver, log);
         homePage.open();
+        takeScreenshot("WelcomePageOpened");
         LoginPage loginPage = homePage.clickLoginLink();
         SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");
         Assert.assertEquals(secureAreaPage.getPageUrl(), secureAreaPage.getPageUrl());

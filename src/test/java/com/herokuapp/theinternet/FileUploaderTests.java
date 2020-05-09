@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class FileUploaderTests extends TestUtilities {
 
 
-    @Test(dataProvider = "files")
+    @Test(dataProvider = "files", dataProviderClass = DataProviders.class)
     public void testUploadFile(int testNo, String fileName) {
         log.info("Starting testUploadFile #" +testNo+" for " + fileName);
         HomePage homePage = new HomePage(driver, log);

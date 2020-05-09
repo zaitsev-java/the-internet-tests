@@ -50,7 +50,6 @@ public class JSAlertTests extends TestUtilities {
         String result = jsAlertsPage.getResultText();
         Assert.assertEquals(alertMessage, "I am a JS prompt");
         Assert.assertEquals(result, "You entered: Test text here");
-
     }
 
 
