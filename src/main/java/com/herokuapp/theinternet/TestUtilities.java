@@ -1,9 +1,20 @@
 package com.herokuapp.theinternet;
 
-public class TestUtilities extends TestBase{
+import org.testng.annotations.DataProvider;
+
+public class TestUtilities extends TestBase {
+
+    @DataProvider(name = "files")
+    protected static Object[][] files() {
+        return new Object[][]{
+                {1, "index.html"},
+                {2, "java.jpg"},
+                {3, "text.txt"}
+        };
+    }
 
 
-    //  For Maintenance
+    // Static Sleep For Maintenance
     void sleep(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -11,16 +22,6 @@ public class TestUtilities extends TestBase{
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

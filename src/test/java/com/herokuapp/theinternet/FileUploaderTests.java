@@ -8,13 +8,12 @@ import org.testng.annotations.Test;
 public class FileUploaderTests extends TestUtilities {
 
 
-    @Test
-    public void testUploadImage() {
-        log.info("Starting testUploadImage test");
+    @Test(dataProvider = "files")
+    public void testUploadFile(int testNo, String fileName) {
+        log.info("Starting testUploadFile #" +testNo+" for " + fileName);
         HomePage homePage = new HomePage(driver, log);
         homePage.open();
         FileUploaderPage fileUploaderPage = homePage.clickFileUploadLink();
-        String fileName = "java.jpg";
         fileUploaderPage.selectFile(fileName);
         fileUploaderPage.pushUploadButton();
         String uploadedFileName = fileUploaderPage.getUploadedFileNames();
