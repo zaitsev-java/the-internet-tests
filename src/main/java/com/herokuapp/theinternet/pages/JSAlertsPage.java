@@ -13,7 +13,6 @@ public class JSAlertsPage extends BasePage {
     private final By clickForJSAlertButton = By.xpath("//button[contains(text(),'Click for JS Alert')]");
     private final By clickForJSConfirmButton = By.xpath("//button[contains(text(),'Click for JS Confirm')]");
     private final By clickForJSPromptButton = By.xpath("//button[contains(text(),'Click for JS Prompt')]");
-
     private final By resultTextField = By.xpath("//p[@id='result']");
 
     private final String resultJSAlertMessage = "You successfuly clicked an alert";
