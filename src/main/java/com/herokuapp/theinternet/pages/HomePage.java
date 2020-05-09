@@ -19,6 +19,7 @@ public class HomePage extends BasePage {
     private final By fileUploadLink = By.xpath("//a[contains(text(),'File Upload')]");
     private final By dragAndDropLink = By.xpath("//a[contains(text(),'Drag and Drop')]");
     private final By hoversLink = By.xpath("//a[contains(text(),'Hovers')]");
+    private final By horizontalSliderLink = By.xpath("//a[contains(text(),'Horizontal Slider')]");
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -91,6 +92,11 @@ public class HomePage extends BasePage {
         return new HoversPage(driver, log);
     }
 
+    public HorizontalSliderPage clickHorizontalSliderLink() {
+        log.info("Clicking on Form Authentication link on HomePage");
+        click(horizontalSliderLink);
+        return new HorizontalSliderPage(driver, log);
+    }
 
 
 
